@@ -309,8 +309,9 @@ auto_mod_vals <-
                paste(modxvals2, collapse = ", "))
       
       if (mod2 == FALSE) {
-        names(modxvals2) <- c("Lower tercile median", "Middle tercile median",
-                              "Upper tercile median")
+        names(modxvals2) <- c(paste0("Lo tercile median: ", round(modxvals2[1],1)),
+                              paste0("Mid tercile median: ", round(modxvals2[2],1)),
+                              paste0("Up tercile median: ", round(modxvals2[3],1)))
       } else {
         names(modxvals2) <- c(paste("Lower tercile of", modx),
                               paste("Middle tercile of", modx),
@@ -329,8 +330,10 @@ auto_mod_vals <-
                paste(modxvals2, collapse = ", "))
       
       if (mod2 == FALSE) {
-        names(modxvals2) <- c("Lowest quartile median", "Lo-Mid quartile median",
-                              "Up-Mid quartile median", "Highest quartile median")
+        names(modxvals2) <- c(paste0("Lo quartile median: ", round(modxvals2[1],1)),
+                              paste0("Lo-Mid quartile median: ", round(modxvals2[2],1)),
+                              paste0("Up-Mid quartile median: ", round(modxvals2[3],1)),
+                              paste0("Up quartile median: ", round(modxvals2[4],1)))
       } else {
         names(modxvals2) <- c(paste("Lowest quartile of", modx),
                               paste("Lo-Mid quartile of", modx),
