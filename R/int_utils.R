@@ -309,9 +309,9 @@ auto_mod_vals <-
                paste(modxvals2, collapse = ", "))
       
       if (mod2 == FALSE) {
-        names(modxvals2) <- c(paste0("Lo (",  round(modxvals2[1],1), ")"),
-                              paste0("Mid (", round(modxvals2[2],1), ")"),
-                              paste0("Up (",  round(modxvals2[3],1), ")"))
+        names(modxvals2) <- c(paste0("Lo ",  levels(d[[group_name]])[1]),
+                              paste0("Mid ", levels(d[[group_name]])[2]),
+                              paste0("Up ",  levels(d[[group_name]])[3]))
       } else {
         names(modxvals2) <- c(paste("Lower tercile of", modx),
                               paste("Middle tercile of", modx),
@@ -330,10 +330,10 @@ auto_mod_vals <-
                paste(modxvals2, collapse = ", "))
       
       if (mod2 == FALSE) {
-        names(modxvals2) <- c(paste0("Lo (", round(modxvals2[1],1), ")"),
-                              paste0("Lo-Mid (", round(modxvals2[2],1), ")"),
-                              paste0("Up-Mid (", round(modxvals2[3],1), ")"),
-                              paste0("Up (", round(modxvals2[4],1), ")"))
+        names(modxvals2) <- c(paste0("Lo ",     levels(d[[group_name]])[1]),
+                              paste0("Lo-Mid ", levels(d[[group_name]])[2]),
+                              paste0("Up-Mid ", levels(d[[group_name]])[3]),
+                              paste0("Up ",     levels(d[[group_name]])[4]))
       } else {
         names(modxvals2) <- c(paste("Lowest quartile of", modx),
                               paste("Lo-Mid quartile of", modx),
