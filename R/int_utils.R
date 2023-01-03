@@ -304,14 +304,16 @@ auto_mod_vals <-
                        "FALSE" = "x")
       group_name <- paste0("mod", x_or_2)
       d[[group_name]] <- cut2(d[[modx]], g = 3, levels.median = TRUE)
+      group_bound <- paste0("mod", x_or_2,"_bound")
+      d[[group_bound]] <- cut2(d[[modx]], g = 3)
       modxvals2 <- as.numeric(levels(d[[group_name]]))
       msg_wrap("Medians of each tercile of ", modx, " are ",
                paste(modxvals2, collapse = ", "))
       
       if (mod2 == FALSE) {
-        names(modxvals2) <- c(paste0("Lo ",  levels(d[[group_name]])[1]),
-                              paste0("Mid ", levels(d[[group_name]])[2]),
-                              paste0("Up ",  levels(d[[group_name]])[3]))
+        names(modxvals2) <- c(paste0("Lo ",  levels(d[[group_bound]])[1]),
+                              paste0("Mid ", levels(d[[group_bound]])[2]),
+                              paste0("Up ",  levels(d[[group_bound]])[3]))
       } else {
         names(modxvals2) <- c(paste("Lower tercile of", modx),
                               paste("Middle tercile of", modx),
@@ -325,15 +327,17 @@ auto_mod_vals <-
                        "FALSE" = "x")
       group_name <- paste0("mod", x_or_2)
       d[[group_name]] <- cut2(d[[modx]], g = 4, levels.median = TRUE)
+      group_bound <- paste0("mod", x_or_2,"_bound")
+      d[[group_bound]] <- cut2(d[[modx]], g = 4)
       modxvals2 <- as.numeric(levels(d[[group_name]]))
       msg_wrap("Medians of each quartile of ", modx, " are ",
                paste(modxvals2, collapse = ", "))
       
       if (mod2 == FALSE) {
-        names(modxvals2) <- c(paste0("Lo ",     levels(d[[group_name]])[1]),
-                              paste0("Lo-Mid ", levels(d[[group_name]])[2]),
-                              paste0("Up-Mid ", levels(d[[group_name]])[3]),
-                              paste0("Up ",     levels(d[[group_name]])[4]))
+        names(modxvals2) <- c(paste0("Lo ",     levels(d[[group_bound]])[1]),
+                              paste0("Lo-Mid ", levels(d[[group_bound]])[2]),
+                              paste0("Up-Mid ", levels(d[[group_bound]])[3]),
+                              paste0("Up ",     levels(d[[group_bound]])[4]))
       } else {
         names(modxvals2) <- c(paste("Lowest quartile of", modx),
                               paste("Lo-Mid quartile of", modx),
